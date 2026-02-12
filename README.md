@@ -43,7 +43,15 @@ workspace_SDK/
    npm install -g @servicenow/cli
    ```
 
-3. **Node.js** >= 18.0.0
+3. **Node.js** 14.21.3 and **npm** 6.14.18
+   - ⚠️ **CRITICAL**: ServiceNow `ui-component` extension requires Node 14.x
+   - Node versions > 14 will cause "no fluent app found" errors
+   - Use [nvm](https://github.com/nvm-sh/nvm) to manage Node versions:
+     ```bash
+     nvm install 14.21.3
+     nvm use 14.21.3
+     npm install -g npm@6.14.18
+     ```
 
 ### Installation
 
@@ -237,11 +245,36 @@ npm run build
 
 ## 🐛 Troubleshooting
 
-### "No Fluent App Found" in ServiceNow IDE
+### "No Fluent App Found" Error
 
-**Cause**: ServiceNow IDE expects a native ServiceNow app structure, which this repo now has.
+**Root Cause**: This error occurs when using the wrong Node.js version or missing required configuration files.
 
-**Solution**: Make sure you've run `npm install` and the `now.json` file exists.
+**Solutions**:
+
+1. **Check Node.js version** (MOST COMMON):
+   ```bash
+   node --version  # Must be 14.21.3
+   npm --version   # Must be 6.14.18
+   ```
+
+   If you have the wrong version:
+   ```bash
+   nvm install 14.21.3
+   nvm use 14.21.3
+   npm install -g npm@6.14.18
+   ```
+
+2. **Verify required files exist**:
+   - ✅ `.builderrc` (root directory)
+   - ✅ `now.config.json` (root directory)
+   - ✅ `now.json` (root directory)
+   - ✅ `now-ui.json` (in each component directory)
+
+3. **Reinstall dependencies**:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
 
 ### Deployment Fails
 
