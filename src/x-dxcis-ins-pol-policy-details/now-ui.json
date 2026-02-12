@@ -1,0 +1,35 @@
+{
+  "components": {
+    "x-dxcis-ins-pol-policy-details": {
+      "innerComponents": [],
+      "uiBuilder": {
+        "associatedTypes": ["global.core", "global.landing-page"],
+        "label": "Policy Details",
+        "icon": "document-icon",
+        "description": "Display comprehensive policy information with service actions",
+        "category": "Insurance"
+      },
+      "properties": [
+        {
+          "name": "policyId",
+          "label": "Policy ID",
+          "description": "System ID of the policy to display",
+          "readOnly": false,
+          "fieldType": "string",
+          "mandatory": false,
+          "defaultValue": ""
+        },
+        {
+          "name": "tableName",
+          "label": "Table Name",
+          "description": "ServiceNow table name for policies",
+          "readOnly": false,
+          "fieldType": "table_name",
+          "mandatory": false,
+          "defaultValue": "x_dxcis_ins_pol_policy"
+        }
+      ]
+    }
+  },
+  "scopeName": "x_dxcis_ins_pol"
+}
