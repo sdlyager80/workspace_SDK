@@ -1,0 +1,201 @@
+{
+  "name": "x_dxcis_ins_pol_policy",
+  "label": "Insurance Policy",
+  "extends": "task",
+  "description": "Life and Annuity Insurance Policy Records",
+  "fields": [
+    {
+      "name": "policy_number",
+      "type": "string",
+      "label": "Policy Number",
+      "max_length": 50,
+      "mandatory": true,
+      "unique": true
+    },
+    {
+      "name": "policy_type",
+      "type": "choice",
+      "label": "Policy Type",
+      "choices": [
+        {"value": "LIFE", "label": "Life Insurance"},
+        {"value": "ANNUITY", "label": "Annuity"}
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "status",
+      "type": "choice",
+      "label": "Status",
+      "choices": [
+        {"value": "ACTIVE", "label": "Active"},
+        {"value": "PENDING", "label": "Pending"},
+        {"value": "LAPSED", "label": "Lapsed"},
+        {"value": "CANCELLED", "label": "Cancelled"},
+        {"value": "PAID_UP", "label": "Paid Up"}
+      ],
+      "mandatory": true,
+      "default": "PENDING"
+    },
+    {
+      "name": "product_name",
+      "type": "string",
+      "label": "Product Name",
+      "max_length": 100,
+      "mandatory": true
+    },
+    {
+      "name": "issue_date",
+      "type": "glide_date",
+      "label": "Issue Date",
+      "mandatory": true
+    },
+    {
+      "name": "effective_date",
+      "type": "glide_date",
+      "label": "Effective Date",
+      "mandatory": true
+    },
+    {
+      "name": "face_amount",
+      "type": "decimal",
+      "label": "Face Amount",
+      "mandatory": false
+    },
+    {
+      "name": "cash_value",
+      "type": "decimal",
+      "label": "Cash Value",
+      "mandatory": false
+    },
+    {
+      "name": "premium_amount",
+      "type": "decimal",
+      "label": "Premium Amount",
+      "mandatory": true
+    },
+    {
+      "name": "premium_frequency",
+      "type": "choice",
+      "label": "Premium Frequency",
+      "choices": [
+        {"value": "MONTHLY", "label": "Monthly"},
+        {"value": "QUARTERLY", "label": "Quarterly"},
+        {"value": "SEMI_ANNUAL", "label": "Semi-Annual"},
+        {"value": "ANNUAL", "label": "Annual"}
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "owner_first_name",
+      "type": "string",
+      "label": "Owner First Name",
+      "max_length": 50,
+      "mandatory": true
+    },
+    {
+      "name": "owner_middle_name",
+      "type": "string",
+      "label": "Owner Middle Name",
+      "max_length": 50
+    },
+    {
+      "name": "owner_last_name",
+      "type": "string",
+      "label": "Owner Last Name",
+      "max_length": 50,
+      "mandatory": true
+    },
+    {
+      "name": "owner_dob",
+      "type": "glide_date",
+      "label": "Owner Date of Birth",
+      "mandatory": true
+    },
+    {
+      "name": "owner_ssn_last4",
+      "type": "string",
+      "label": "Owner SSN (Last 4)",
+      "max_length": 4,
+      "encrypted": true
+    },
+    {
+      "name": "owner_email",
+      "type": "email",
+      "label": "Owner Email"
+    },
+    {
+      "name": "owner_phone",
+      "type": "phone_number",
+      "label": "Owner Phone"
+    },
+    {
+      "name": "mailing_street1",
+      "type": "string",
+      "label": "Mailing Address - Street 1",
+      "max_length": 100
+    },
+    {
+      "name": "mailing_street2",
+      "type": "string",
+      "label": "Mailing Address - Street 2",
+      "max_length": 100
+    },
+    {
+      "name": "mailing_city",
+      "type": "string",
+      "label": "Mailing Address - City",
+      "max_length": 50
+    },
+    {
+      "name": "mailing_state",
+      "type": "string",
+      "label": "Mailing Address - State",
+      "max_length": 2
+    },
+    {
+      "name": "mailing_zip",
+      "type": "string",
+      "label": "Mailing Address - Zip",
+      "max_length": 10
+    },
+    {
+      "name": "mailing_country",
+      "type": "string",
+      "label": "Mailing Address - Country",
+      "max_length": 50,
+      "default": "USA"
+    },
+    {
+      "name": "return_mail_flag",
+      "type": "boolean",
+      "label": "Return Mail Flag",
+      "default": false
+    },
+    {
+      "name": "return_mail_date",
+      "type": "glide_date",
+      "label": "Return Mail Date"
+    },
+    {
+      "name": "return_mail_reason",
+      "type": "string",
+      "label": "Return Mail Reason",
+      "max_length": 255
+    }
+  ],
+  "indexes": [
+    {
+      "name": "policy_number_idx",
+      "columns": ["policy_number"],
+      "unique": true
+    },
+    {
+      "name": "owner_name_idx",
+      "columns": ["owner_last_name", "owner_first_name"]
+    },
+    {
+      "name": "status_idx",
+      "columns": ["status"]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "x_dxcis_ins_pol",
+  "name": "Insurance Policy Servicing",
+  "version": "1.0.0",
+  "description": "Life and Annuity Insurance Policy Servicing Application",
+  "author": "",
+  "license": "MIT",
+  "scope": "x_dxcis_ins_pol",
+  "tables": [
+    {
+      "name": "x_dxcis_ins_pol_policy",
+      "label": "Insurance Policy",
+      "extends": "task"
+    }
+  ],
+  "uiBuilder": {
+    "enabled": true,
+    "experiences": [
+      {
+        "name": "policy-servicing",
+        "label": "Policy Servicing",
+        "description": "Insurance Policy Servicing Experience"
+      }
+    ]
+  }
+}

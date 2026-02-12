@@ -1,0 +1,35 @@
+{
+  "name": "insurance-policy-servicing-sdk",
+  "version": "1.0.0",
+  "description": "Life and Annuity Insurance Policy Servicing - ServiceNow SDK Native Application",
+  "scripts": {
+    "dev": "snc ui-component develop",
+    "build": "snc ui-component build",
+    "deploy": "snc ui-component deploy",
+    "test": "snc test"
+  },
+  "dependencies": {
+    "@servicenow/sdk": "^28.0.0",
+    "@servicenow/ui-component": "^28.0.0",
+    "@servicenow/ui-core": "^28.0.0",
+    "@servicenow/ui-effect-http": "^28.0.0",
+    "@servicenow/ui-renderer-snabbdom": "^28.0.0"
+  },
+  "devDependencies": {
+    "@servicenow/cli": "^28.0.0",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "servicenow",
+    "insurance",
+    "policy-servicing",
+    "ui-builder",
+    "sdk"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
