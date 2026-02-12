@@ -1,0 +1,12 @@
+{
+  "scope": "x_dxcis_ins_pol",
+  "appName": "Insurance Policy Servicing",
+  "fluentDir": "src",
+  "serverModulesDir": "src/server",
+  "uiComponentsDir": "src",
+  "tablesDir": "src/tables",
+  "environmentVariables": {},
+  "paths": {
+    "src": "./src"
+  }
+}
